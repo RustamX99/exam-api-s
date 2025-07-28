@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Custom animation for loader dots */
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-bounce {
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+    </style>
+</head>
+
+<body class="pt-16 bg-slate-300 flex flex-col items-center">
+    <div id="loader" class="absolute inset-0 flex justify-center items-center bg-white bg-opacity-10 z-50 ">
+        <h1 class="text-5xl text-black font-bold">Loading...</h1>
+        <div class="flex space-x-2">
+            <div class="w-4 h-4 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+            <div class="w-4 h-4 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            <div class="w-4 h-4 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.4s;"></div>
+        </div>
+    </div>
+    <h1 class="text-center text-blue-400 text-5xl font-black">Mahsulot katalogi</h1>
+    <div class="flex gap-5 justify-center mt-6">
+        <select name="" id="select1" class="w-[200px] py-2 pl-3 bg-white rounded-lg">
+            <option value="All">Barcha kategoriyalar</option>
+            <option value="men's clothing">men's clothing</option>
+            <option value="jewelery">jewelery</option>
+            <option value="electronics">electronics</option>
+            <option value="women's clothing">women's clothing</option>
+        </select>
+        <select name="" id="select2" class="w-[200px] py-2 pl-3 bg-white rounded-lg">
+            <option value="All">Narxi boyicha saralash</option>
+            <option value="from money">Osish boyicha</option>
+            <option value="to money">Kamayish boyicha</option>
+        </select>
+        <input type="text" name="" id="searchInput" placeholder="Search..."
+            class="w-[200px] py-3 pl-4 rounded-lg bg-white border border-solid border-gray-400 outline-none">
+    </div>
+    <div id="container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
